@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Car bean -->
+    <bean id="carBean" class="com.ioc.classes.Car">
+        <constructor-arg value="MyCar" />
+    </bean>
+
+    <!-- Define the Garage bean and inject the Car bean as a dependency -->
+    <bean id="garageBean" class="com.ioc.classes.Garege">
+        <constructor-arg ref="carBean" />
+    </bean>
+
+</beans>
